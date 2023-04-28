@@ -11,8 +11,8 @@ import sys
 import math
 from threading import Thread
 
-idTypeDict = ["Native", "XML", "JSON", "Google ProtoBuff", "Apache Avro", "YAML", "MessagePack", "all"]
-typeIdDict = {"Native": 0, "XML": 1, "JSON": 2, "Google ProtoBuff": 3, "Apache Avro": 4, "YAML": 5, "MessagePack": 6, "all": -1}
+idTypeDict = ["Native", "XML", "JSON", "GoogleProtoBuff", "Apache Avro", "YAML", "MessagePack", "all"]
+typeIdDict = {"Native": 0, "XML": 1, "JSON": 2, "GoogleProtoBuff": 3, "Apache Avro": 4, "YAML": 5, "MessagePack": 6, "all": -1}
 services = []
 commands = {}
 latest = [0, 0, 0, 0, 0, 0, 0]
