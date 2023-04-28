@@ -1,0 +1,12 @@
+{"namespace": "ser.avro",
+ "type": "record",
+ "name": "Ser",
+ "fields": [
+     {"name": "integer", "type": "int"},
+     {"name": "floating",  "type": "float"},
+     {"name": "array", "type": {"type": "array", "items": "int"}},
+     {"name": "boolean", "type": "boolean"},
+     {"name": "string", "type": "string"},
+     {"name": "dictionary", "type": {"type": "map", "values": "int"}}
+ ]
+}

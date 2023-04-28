@@ -1,0 +1,17 @@
+syntax = "proto3";
+ 
+service Servicer {
+  rpc GetSerializationTime (Query) returns (SerializationResponse) {}
+}
+ 
+message SerializationResponse {
+  int64 typeId = 1;
+  int64 objSize = 2;
+  double serializeTime = 3;
+  double deserializeTime = 4;
+}
+ 
+message Query {
+  int64 typeId = 1;
+} 
+

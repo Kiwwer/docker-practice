@@ -1,0 +1,105 @@
+services:
+  service1:
+    image: mxryd/service
+    build:
+      context: ./service
+      dockerfile: service.dockerfile
+    environment:
+      SERVICE_PORT: 8081
+      MULTICAST_GROUP: ${MULTICAST_GROUP}
+      ITER_COUNT: 1012
+    ports:
+      - 8081:8081
+
+  service2:
+    image: mxryd/service
+    build:
+      context: ./service
+      dockerfile: service.dockerfile
+    environment:
+      SERVICE_PORT: 8082
+      MULTICAST_GROUP: ${MULTICAST_GROUP}
+      ITER_COUNT: 1012
+    ports:
+      - 8082:8082
+
+  service3:
+    image: mxryd/service
+    build:
+      context: ./service
+      dockerfile: service.dockerfile
+    environment:
+      SERVICE_PORT: 8083
+      MULTICAST_GROUP: ${MULTICAST_GROUP}
+      ITER_COUNT: 1012
+    ports:
+      - 8083:8083
+
+  service4:
+    image: mxryd/service
+    build:
+      context: ./service
+      dockerfile: service.dockerfile
+    environment:
+      SERVICE_PORT: 8084
+      MULTICAST_GROUP: ${MULTICAST_GROUP}
+      ITER_COUNT: 1012
+    ports:
+      - 8084:8084
+
+  service5:
+    image: mxryd/service
+    build:
+      context: ./service
+      dockerfile: service.dockerfile
+    environment:
+      SERVICE_PORT: 8085
+      MULTICAST_GROUP: ${MULTICAST_GROUP}
+      ITER_COUNT: 1012
+    ports:
+      - 8085:8085
+
+  service6:
+    image: mxryd/service
+    build:
+      context: ./service
+      dockerfile: service.dockerfile
+    environment:
+      SERVICE_PORT: 8086
+      MULTICAST_GROUP: ${MULTICAST_GROUP}
+      ITER_COUNT: 1012
+    ports:
+      - 8086:8086
+
+  service7:
+    image: mxryd/service
+    build:
+      context: ./service
+      dockerfile: service.dockerfile
+    environment:
+      SERVICE_PORT: 8087
+      MULTICAST_GROUP: ${MULTICAST_GROUP}
+      ITER_COUNT: 1012
+    ports:
+      - 8087:8087
+
+  server:
+    image: mxryd/server
+    build:
+      context: ./service
+      dockerfile: server.dockerfile
+    environment:
+      SERVER_PORT: 2000
+      SERVICE1_ADDR: service1:8081
+      SERVICE2_ADDR: service2:8082
+      SERVICE3_ADDR: service3:8083
+      SERVICE4_ADDR: service4:8084
+      SERVICE5_ADDR: service5:8085
+      SERVICE6_ADDR: service6:8086
+      SERVICE7_ADDR: service7:8087
+      MULTICAST_GROUP: ${MULTICAST_GROUP}
+    ports:
+      - target: 2000
+        published: 2000
+        protocol: udp
+        mode: host
